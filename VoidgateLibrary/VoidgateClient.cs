@@ -16,7 +16,8 @@ public class VoidgateClient : IDisposable
     private static readonly JsonSerializerOptions JsonOptions = new()
     {
         DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull,
-        PropertyNameCaseInsensitive = true
+        PropertyNameCaseInsensitive = true,
+        TypeInfoResolver = VoidgateJsonContext.Default
     };
 
     public VoidgateClient(HttpClient httpClient, VoidgateClientOptions? options = null)
